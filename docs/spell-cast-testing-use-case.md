@@ -49,6 +49,11 @@ through the helper's cleanup path.
 
 ## Proposed API: reuse the script execution guard
 
+This integration depends on the independently reviewed script-execution guard
+API. It should be rebased and submitted only after that core API lands; the
+Spell change itself remains limited to cooperative wait checkpoints and its
+focused regression coverage.
+
 There is no new `Spell#cast` argument and no `cast_once` method in this change.
 The opt-in interface is the general
 [`Script#with_execution_guard`](script-execution-guard.md):
